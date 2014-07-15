@@ -3,15 +3,15 @@
  * Module dependencies.
  */
 
+var indexOf = require('indexof');
 var query = require('query');
 var each = require('each');
-var indexOf = require('indexof');
 
 /**
  * Initial scripts.
  */
 
-var initialScripts;
+var initialScripts = [];
 
 /**
  * Remove all scripts not initially present.
@@ -39,3 +39,9 @@ exports = module.exports = function(){
 exports.bind = function(scripts){
   initialScripts = scripts || query.all('script');
 };
+
+/**
+ * Automatically bind.
+ */
+
+exports.bind();

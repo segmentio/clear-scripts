@@ -11,7 +11,7 @@
 
 ## API
 
-
+### clearScripts()
 
 ## License
 
