@@ -1,0 +1,18 @@
+{
+  "name": "clear-scripts",
+  "repo": "segmentio/clear-scripts",
+  "description": "Clear all script tags not initially present (for testing)",
+  "version": "0.1.0",
+  "keywords": [],
+  "dependencies": {
+    "component/query": "*",
+    "component/each": "*",
+    "component/indexof": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
