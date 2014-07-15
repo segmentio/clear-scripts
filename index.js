@@ -16,7 +16,7 @@ var initialScripts = [];
 /**
  * Remove all scripts not initially present.
  *
- * @api private
+ * @api public
  */
 
 exports = module.exports = function(){
