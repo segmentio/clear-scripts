@@ -16,17 +16,18 @@ var initialScripts = [];
 /**
  * Remove all scripts not initially present.
  *
+ * @param {Function} [match] Only remove ones that return true
  * @api public
  */
 
-exports = module.exports = function(){
+exports = module.exports = function(match){
+  match = match || saucelabs;
   var finalScripts = query.all('script');
   each(finalScripts, function(script){
-    if (-1 == indexOf(initialScripts, script)) {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    }
+    if (-1 != indexOf(initialScripts, script)) return;
+    if (!script.parentNode) return;
+    if (!match(script)) return;
+    script.parentNode.removeChild(script);
   });
 };
 
@@ -38,6 +39,18 @@ exports = module.exports = function(){
 
 exports.bind = function(scripts){
   initialScripts = scripts || query.all('script');
+};
+
+/**
+ * Default matching function, ignores saucelabs jsonp scripts.
+ *
+ * @param {Script} script
+ * @api private
+ * @return {Boolean}
+ */
+
+function saucelabs(script) {
+  return !script.src.match(/localtunnel\.me\/saucelabs/);
 };
 
 /**
