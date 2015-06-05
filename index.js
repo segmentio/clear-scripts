@@ -50,7 +50,7 @@ exports.bind = function(scripts){
  */
 
 function saucelabs(script) {
-  return !script.src.match(/localtunnel\.me\/saucelabs/);
+  return !script.src.match(/localtunnel\.me\/saucelabs|\/duotest/);
 };
 
 /**
