@@ -23,7 +23,7 @@
   "dependencies": {
     "@ndhoule/each": "^2.0.1",
     "@ndhoule/includes": "^2.0.1",
-    "component-query": "0.0.3"
+    "component-bind": "^1.0.0"
   },
   "devDependencies": {
     "@segment/eslint-config": "^3.1.1",
